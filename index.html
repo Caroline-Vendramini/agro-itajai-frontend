@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form" class="login-form">
+            <h1 class="login-title">Agro Itajai</h1>
+            <label class="input-label" for="email">E-mail</label>
+            <input class="input margin-14" type="email" placeholder="exemplo@algumacoisa.com" id="email" >
+            <label class="input-label" for="senha">Senha</label>
+            <input class="input margin-9" type="password" name="" id="senha" placeholder="Digite sua senha" >
+            <a class="link-form" href="">ESQUECI MINHA SENHA</a>
+            <button type="submit" class="button-form" id="button-submit"  >ENTRAR</button>
+        </form>
+    </div>
+</body>
+    <script>
+        document.getElementById("form").addEventListener("submit", funcaoSubmit)
+        function funcaoSubmit(e) {
+            e.preventDefault()
+            const email= document.getElementById("email").value
+            const senha= document.getElementById("senha").value
+
+            console.log(email)
+            console.log(senha)
+        }
+    </script>
+</html>
