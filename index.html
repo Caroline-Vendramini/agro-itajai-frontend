@@ -25,13 +25,25 @@
 </body>
     <script>
         document.getElementById("form").addEventListener("submit", funcaoSubmit)
-        function funcaoSubmit(e) {
+        async function funcaoSubmit(e) {
             e.preventDefault()
             const email= document.getElementById("email").value
             const senha= document.getElementById("senha").value
-
-            console.log(email)
-            console.log(senha)
+            const response = await fetch("http://localhost:3000/login", {
+                method: "POST",
+                body: JSON.stringify({email, senha}),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            const responseJson = await response.json()
+            console.log(responseJson)
+            if(responseJson.nome){
+                alert(responseJson.nome)
+            }
+            else{
+                alert(responseJson.error)
+            }
         }
     </script>
 </html>
